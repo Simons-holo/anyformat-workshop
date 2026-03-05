@@ -234,3 +234,74 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 This repository is designed as an educational resource for learning open source contribution workflows. The seeded issues represent realistic bugs and improvements that could occur in any real project.
+---
+
+## Troubleshooting
+
+### Common Issues and Solutions
+
+#### 1. ffmpeg not found error
+
+**Problem**: `FileNotFoundError: ffmpeg not found`
+
+**Solution**: Install ffmpeg:
+- macOS: `brew install ffmpeg`
+- Ubuntu/Debian: `sudo apt install ffmpeg`
+- Windows: Download from https://ffmpeg.org/download.html
+
+#### 2. Permission denied errors
+
+**Problem**: `PermissionError: [Errno 13] Permission denied`
+
+**Solution**:
+- Check file permissions: `ls -la`
+- Fix permissions: `chmod +x your_script.py`
+- Or run with appropriate user permissions
+
+#### 3. Invalid format errors
+
+**Problem**: `ValueError: Invalid format specified`
+
+**Solution**:
+- Ensure format is one of: json, csv, xlsx, parquet
+- Check the file extension matches the format
+- Verify the file is not corrupted
+
+#### 4. Python version errors
+
+**Problem**: `SyntaxError` or import errors
+
+**Solution**:
+- Ensure Python 3.10+ is installed
+- Check version: `python --version`
+- Create fresh virtual environment: `python -m venv venv && source venv/bin/activate`
+- Reinstall dependencies: `pip install -r requirements.txt`
+
+#### 5. Module not found
+
+**Problem**: `ModuleNotFoundError: No module named 'xxx'`
+
+**Solution**:
+- Install missing package: `pip install xxx`
+- Or install all requirements: `pip install -r requirements.txt`
+
+#### 6. Path issues on Windows
+
+**Problem**: Paths not working correctly
+
+**Solution**:
+- Use raw strings for paths: `r"C:\path\to\file"`
+- Use pathlib: `from pathlib import Path`
+- Forward slashes work in Python: `"C:/path/to/file"`
+
+#### 7. Encoding errors
+
+**Problem**: `UnicodeDecodeError` when reading files
+
+**Solution**:
+- Specify encoding: `open(file, encoding='utf-8')`
+- Handle errors: `open(file, encoding='utf-8', errors='ignore')`
+
+---
+
+For more help, please open an issue on GitHub.
